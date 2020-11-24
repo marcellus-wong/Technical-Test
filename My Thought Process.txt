@@ -1,0 +1,57 @@
+Question 1) My Thought Process:
+
+- First of all, I like to read through the entire document, noting key variables and information.
+- I also like to visualise what I'm reading so I draw diagrams, just to display the key information and map everything out.
+- When it came to starting to code, I decided to just take one pizzeria at a time.
+- This allows me to focus on building the core of the process.
+- Then I can think about looping the process to add in multiple pizzerias.
+- I created a variable user_input that takes in our user input.
+- I needed a way to consider a multi-line user input as inputs in python are generally one line.
+- I created a multi-line input using a while loop, that breaks when we don't have an input. This means if we go to a new line (by pressing the 'Enter' key),
+	the input still runs unless we start a new line (pressing 'Enter' key again).
+- Then we append the input into an empty list, so we can store the multi-line input in a single list
+- Now I had to break the spaces in each line, making each numeric character it's own element in this list. I used split to do this.
+- Now the first element of this list will always be N and the second element of this list will always be M.
+- However, since I was only focusing on one pizzeria for now, M was arbitrary.
+- Using the inputted value of N, I would create a zero matrix of NxN.
+- Then once I have my N value, I would create variables from the input to store our values X, Y and K.
+- These values would be the 3rd, 4th and 5th element respectively in the list.
+- I would use the value of X and Y to plot this pizzeria location as '1' in our zero matrix.
+- From here, I would decide how to add in the blocks that the pizzeria can deliver to from it's initial location.
+- I decided to create conditions for each of the different directions to start with
+	- If this, then that for each direction: North, South, East and West 
+	- If they go outside of the matrix, then do nothing,
+	- If they are within the matrix, then add a 1 to the matrix to indicate it can be delivered to that certain block.
+- I thought about how to deal with all the other places it can be delivered to in each potential quadrant surrounding the pizzeria location
+	- I chose to do 2 for loops, with x and y within the range of the total travel distance
+	- This allows me to do a combination of summed x and y values, totalling the total distance.
+	- Again, we had some measures here for the code to 'pass' or do nothing if the distance extends outside the map/matrix.
+	- By doing this, we can fill each combination of directions for that quadrant.
+	- Repeating this for each of the other 3 quadrants, we can completely map the blocks covered by the delivery person.
+- Once I was able to successful complete the mapping for one pizzeria, I needed to determine how to loop in the extra values of X,Y and K for M>1.
+- I would add in a for loop, to repeat this entire process for each value of M that was given as a user input.
+- I knew that the 3rd, 4th and 5th element would denote X, Y and K for the first pizzeria in my input list. And I also realised the 6th, 7th and 8th element would denote the second pizzeria's X, Y and K.
+- This led me to create a multiplier of 3, increasing for each loop, to add onto the element location of X, Y and Z, so it would retrieve the next pizzeria position in the list.
+- But then came the problem of how to store each end matrix with all the mapped out matrix blocks.
+- I found the best way of doing this is to create an empty list at the start, and append each resulting matrix iteration into the empty list.
+- From here, I would be able to store each successive pizzeria distance map as a matrix in this list.
+- However, I came upon a problem which was for every restart of the next pizzeria, the previous pizzeria matrix would be stored and reused through the entire process.
+- To combat this, at the end of the process loop, I would reset the zero_matrix as the distance matrix was already appended to our empty list, thus we can start
+	the entire proess afresh using a clean zero_matrix and our new coordinates and distance from the next pizzeria
+- Now to find out the number of pizzerias that deliver to each block, we split this appended matrix full of each pizzeria's delivering distance
+- Then we sum all the matrices together to get a total.
+- To find out the maximum number of pizzeria deliveries for each block, we just get the max of this total matrix.
+
+
+
+
+Question 3)- Complexity of approach:
+
+- I think the complexity lies in accomodating the numerous different cases and directions needed to plot out the delivering distance for each pizzeria.
+- I preferably would like to shorten my current 8 different cases into 4 or less cases, but couldn't code or think of a way to best carry this out.
+- I also think there might be a way to do this without the cases but this was the first solution that came to mind.
+- As well as this, the method of using a multiplier to retrieve the next position of the next pizzeria is far from optimal.
+- It's not a great way of doing this, as it could possibly be picked apart and isn't efficient in my opinion.
+- Another thing to try and improve is having a multi-line input already available and being able to copy and paste it into my code to run.
+- Currently for my code, you have to manually insert each line, which for large values of M/pizzerias can be quite time-consuming and definitely not efficient on a huge-scale.
+- This would be the very first thing I would possibly try to improve.
