@@ -2,6 +2,8 @@
 
 README:
 
+<br />
+
 
 INSTALLATION OF PYTHON AND MU:
 
@@ -13,9 +15,9 @@ http://automatetheboringstuff.com/2e/chapter0/
 
 (This is quite an interesting book! Haven't had time to continue reading but I would recommend it!)
 
-
-
-
+<br />
+<br />
+<br />
 
 HOW MY CODE WORKS:
 
@@ -23,10 +25,10 @@ HOW MY CODE WORKS:
 - The format in which you enter the input is crucial for this to work.
 - Here is an example:
 
-8 3
-4 4 2
-6 2 2
-1 7 5
+8 3 <br />
+4 4 2 <br />
+6 2 2 <br />
+1 7 5 <br />
 
 
 - Where values of N and M are entered first (N=8 and M=3), separated by a space.
@@ -37,9 +39,9 @@ HOW MY CODE WORKS:
 - We keep repeating this process until we have created a new line for each pizzera (3 new lines created since our M=3).
 - Once we have finished with out input and want the process to run, click the 'Enter' key twice to output the result.
 
-
-
-
+<br />
+<br />
+<br />
 
 ADDITIONAL NOTES:
 
