@@ -1,4 +1,4 @@
-# Novafutur-tech-test
+# Technical Test
 
 README:
 
